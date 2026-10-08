@@ -1,0 +1,20 @@
+{
+  "TAH20": {
+    "StyleName": "1920s (Art Deco)",
+    "NeedCore": "The 1920s themes require the Token Action HUD Core module.",
+    "Styles": {
+      "annees20": "1920s (Art Deco)",
+      "newyork20": "1920s New York",
+      "montagnes": "At the Mountains of Madness",
+      "ny2026": "New York 2026",
+      "antarctique2026": "Antarctica 2026"
+    },
+    "Settings": {
+      "ForceStyle": {
+        "Name": "Theme forced for the whole table",
+        "Hint": "GM only. The style chosen here is applied to every player, right away for connected players and at each login.",
+        "Free": "Let everyone choose"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+/* Polices du thème Années 20 — licences dans fonts/LICENSE-*.txt
+   Limelight et Poiret One : SIL Open Font License 1.1 ; Special Elite : Apache 2.0 */
+@font-face {
+  font-family: "TAH20 Limelight";
+  src: url("../fonts/Limelight.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TAH20 Poiret One";
+  src: url("../fonts/PoiretOne.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TAH20 Special Elite";
+  src: url("../fonts/SpecialElite.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TAH20 IM Fell SC";
+  src: url("../fonts/IMFellEnglishSC.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "TAH20 IM Fell";
+  src: url("../fonts/IMFellEnglish.woff2") format("woff2");
+  font-display: swap;
+}
+/* Thèmes 2026 — Inter et Rajdhani : SIL OFL 1.1 */
+@font-face { font-family: "TAH20 Inter"; src: url("../fonts/Inter-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "TAH20 Inter"; src: url("../fonts/Inter-SemiBold.woff2") format("woff2"); font-weight: 600 700; font-display: swap; }
+@font-face { font-family: "TAH20 Rajdhani"; src: url("../fonts/Rajdhani-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "TAH20 Rajdhani"; src: url("../fonts/Rajdhani-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }

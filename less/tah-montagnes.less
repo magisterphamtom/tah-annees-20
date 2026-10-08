@@ -1,0 +1,83 @@
+/* Token Action HUD — Thème « Par-delà les Montagnes Hallucinées » (carnet d'expédition) — magisterphamtom */
+@import "_base-vars.less";
+@text-shadow: none;
+
+@theme-class: tah-style-montagnes;
+@theme-body: tah-montagnes-active;
+@ornament: "✻";
+
+@bg: #e7e9e1;
+@bg2: #f6f8f4;
+@gold: #3f6a8e;          // bleu d'expédition
+@gold-light: #23415e;    // encre bleu marine
+@gold-dark: #9fb9cc;
+@ink: #1d2b3a;
+@ink-dim: #4f6274;
+@ink-disabled: #9aa6b0;
+@ink-strong: #0b1c2c;
+@blood: #23415e;         // onglet ouvert : bleu nuit polaire
+@blood-dark: #142a40;
+@blood-light: #a3222a;   // rouge des tampons
+@on-blood: #ffffff;
+@hover-bg: #dde8ef;
+@image-bg: #d3dde3;
+
+@font-title: "TAH20 IM Fell SC", "IM Fell English SC", Georgia, serif;
+@font-label: "TAH20 IM Fell", "IM Fell English", Georgia, serif;
+@font-body: "TAH20 Special Elite", "Special Elite", "Courier New", monospace;
+
+@import "_theme.less";
+
+// Touches propres aux Montagnes Hallucinées
+#token-action-hud-app.@{theme-class} #token-action-hud {
+  // boutons : papier givré
+  .tah-button-box {
+    background: linear-gradient(180deg, #ffffff 0%, @bg 100%);
+  }
+  .tah-group-button {
+    color: @gold-light;
+    background:
+      linear-gradient(180deg, rgba(186, 214, 232, 0.6), rgba(255, 255, 255, 0) 45%),
+      linear-gradient(180deg, #ffffff, @bg);
+  }
+  .tah-action-button {
+    font-family: @font-body;
+    font-size: 13px;
+    font-weight: normal;
+    color: @ink;
+  }
+  .tah-action-button .tah-info-container .tah-info {
+    font-family: @font-body;
+    background: @gold-light;
+    color: #ffffff;
+    border-color: @gold-light;
+  }
+  .tah-button-box.active,
+  .tah-button-box.active .tah-button-text {
+    color: #ffffff;
+  }
+  .tah-button-box.active {
+    background: linear-gradient(180deg, @gold, @gold-light);
+  }
+  .tah-button-box.active .tah-info-container .tah-info {
+    background: #ffffff;
+    color: @gold-light;
+  }
+  #tah-character-name {
+    color: #ffffff;
+    text-shadow: 0 0 4px #000, 0 1px 2px #000;
+  }
+  .tah-button-image { filter: grayscale(0.35) contrast(1.05); }
+  // panneau : papier ligné, givre en haut
+  .tah-tab-group > .tah-subgroups-container > .tah-subgroups {
+    background:
+      linear-gradient(180deg, rgba(186, 214, 232, 0.55) 0%, rgba(255, 255, 255, 0) 22%),
+      repeating-linear-gradient(0deg, transparent 0 21px, rgba(60, 100, 140, 0.10) 21px 22px),
+      linear-gradient(180deg, @bg2, @bg);
+    box-shadow: 0 12px 30px rgba(20, 45, 70, 0.45);
+  }
+}
+body.@{theme-body} #tooltip.tah-tooltip {
+  background: linear-gradient(180deg, @bg2, @bg);
+  color: @ink;
+}

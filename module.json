@@ -1,0 +1,64 @@
+{
+  "id": "tah-annees-20",
+  "title": "Token Action HUD – Thèmes L'Appel de Cthulhu",
+  "description": "Cinq styles pour Token Action HUD, dans l'esprit de L'Appel de Cthulhu : Années 20 (Art Déco), New York années 20, Par-delà les Montagnes Hallucinées, New York 2026 et Antarctique 2026. Ils s'ajoutent à la liste des styles de Token Action HUD Core.",
+  "version": "1.2.0",
+  "authors": [
+    {
+      "name": "magisterphamtom",
+      "url": "https://github.com/magisterphamtom"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14.368"
+  },
+  "relationships": {
+    "requires": [
+      {
+        "id": "token-action-hud-core",
+        "type": "module",
+        "compatibility": {
+          "minimum": "2.1",
+          "verified": "2.1.2"
+        }
+      }
+    ],
+    "recommends": [
+      {
+        "id": "token-action-coc-7",
+        "type": "module",
+        "reason": "Le thème a été pensé pour Token Action HUD CoC7."
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/fonts.css",
+    "styles/tah-annees20.css",
+    "styles/tah-newyork.css",
+    "styles/tah-montagnes.css",
+    "styles/tah-ny2026.css",
+    "styles/tah-antarctique2026.css"
+  ],
+  "languages": [
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "url": "https://github.com/magisterphamtom/tah-annees-20",
+  "manifest": "https://github.com/magisterphamtom/tah-annees-20/releases/latest/download/module.json",
+  "download": "https://github.com/magisterphamtom/tah-annees-20/releases/download/v1.2.0/module.zip",
+  "bugs": "https://github.com/magisterphamtom/tah-annees-20/issues",
+  "readme": "https://github.com/magisterphamtom/tah-annees-20/blob/main/README.md",
+  "license": "CC-BY-4.0"
+}

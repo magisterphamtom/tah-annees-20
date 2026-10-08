@@ -1,0 +1,912 @@
+/* Token Action HUD — Thème « Antarctique 2026 » (tablette de station polaire) — magisterphamtom */
+/* ==========================================================================
+   Token Action HUD — modèle commun des thèmes (Années 20, New York, Montagnes)
+   Chaque fichier tah-<thème>.less définit ses variables puis importe ce modèle.
+   ========================================================================== */
+#token-action-hud-app.tah-style-antarctique2026 {
+  --tah-background-color: transparent;
+  --tah-border-radius: 0;
+  --tah-gap: 5px;
+  --tah-button-background: linear-gradient(180deg, #f7fafc 0%, #e9f0f5 100%);
+  --tah-button-background-color: #e9f0f5;
+  --tah-button-border: 1px solid #d6e1ea;
+  --tah-button-box-shadow: inset 0 0 0 1px rgba(255, 106, 19, 0.08), 0 2px 6px rgba(0, 0, 0, 0.7);
+  --tah-button-box-font-weight: normal;
+  --tah-button-text-color: #13202c;
+  --tah-button-height: 32px;
+  --tah-button-min-width: 32px;
+  --tah-button-text-shadow: none;
+  --tah-button-hover-background-color: #eef4f8;
+  --tah-button-hover-border: 1px solid #c9d7e2;
+  --tah-button-hover-box-shadow: inset 0 0 0 1px rgba(255, 106, 19, 0.25), 0 0 10px rgba(201, 215, 226, 0.45);
+  --tah-button-hover-text-primary-color: #ff6a13;
+  --tah-button-hover-text-secondary-color: #ff6a13;
+  --tah-button-hover-text-tertiary-color: #0b1520;
+  --tah-button-active-background-color: #ff6a13;
+  --tah-button-active-border: 1px solid #c9d7e2;
+  --tah-button-active-box-shadow: inset 0 0 0 1px rgba(255, 106, 19, 0.35), 0 0 8px rgba(255, 106, 19, 0.8);
+  --tah-button-active-text-color: #ff6a13;
+  --tah-button-toggle-background-color: #e9f0f5;
+  --tah-button-toggle-hover-background-color: #e2540a;
+  --tah-button-toggle-hover-border: 1px solid #c9d7e2;
+  --tah-button-toggle-hover-box-shadow: 0 0 10px rgba(201, 215, 226, 0.45);
+  --tah-button-image-background-color: #dfe8ef;
+  --tah-button-image-border-radius: 0;
+  --tah-button-image-height: var(--tah-button-height);
+  --tah-button-image-width: var(--tah-button-min-width);
+  --tah-icon-color: #c9d7e2;
+  --tah-icon-text-shadow: none;
+  --tah-icon-hover-color: #ff6a13;
+  --tah-icon-hover-text-shadow: 0 0 8px rgba(201, 215, 226, 0.8);
+  --tah-text-primary-color: #13202c;
+  --tah-text-secondary-color: #c9d7e2;
+  --tah-text-tertiary-color: #ff6a13;
+  --tah-character-name-color: #ff6a13;
+  --tah-character-name-text-shadow: 0 0 6px rgba(0, 0, 0, 0.95), 0 1px 2px #000;
+  --tah-list-subgroup-title-icon-color: #c9d7e2;
+  --tah-list-subgroup-title-hover-icon-color: #ff6a13;
+  --tah-list-subgroup-title-font-size: 11px;
+  --tah-subgroups-background: radial-gradient(ellipse at top, rgba(201, 215, 226, 0.12), transparent 65%), linear-gradient(180deg, #f7fafc, #e9f0f5);
+  --tah-text-disabled-color: #a3b1bd;
+  --tah-text-hover-primary-color: #ff6a13;
+  --tah-text-hover-secondary-color: #ff6a13;
+  --tah-text-hover-tertiary-color: #0b1520;
+  --tah-text-shadow: none;
+  position: fixed;
+  z-index: 20;
+  font-family: "TAH20 Inter", "Helvetica Neue", Arial, sans-serif;
+  /*
+ * Feuille de structure de Token Action HUD Core, par Larkinabout
+ * https://github.com/Larkinabout/fvtt-token-action-hud-core
+ * Licence Creative Commons Attribution 4.0 International (CC BY 4.0)
+ * Reprise sans modification pour servir de base au thème Années 20.
+ */
+  /* -------------------------------------------- */
+  /* Group/Subgroup context menu                  */
+  /* -------------------------------------------- */
+  /* ------------------------------------------------------------------------
+     Habillage Art Déco
+     ------------------------------------------------------------------------ */
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud {
+  border-radius: var(--tah-border-radius);
+  display: flex;
+  /* -------------------------------------------- */
+  /* Drag-to-reorder                              */
+  /* -------------------------------------------- */
+  /* -------------------------------------------- */
+  /* Button Container                             */
+  /* -------------------------------------------- */
+  /* -------------------------------------------- */
+  /* Box Button                                   */
+  /* -------------------------------------------- */
+  /* -------------------------------------------- */
+  /* Icon Button                                  */
+  /* -------------------------------------------- */
+  /* -------------------------------------------- */
+  /* Groups                                       */
+  /* -------------------------------------------- */
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-hidden {
+  display: none !important;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-icon {
+  align-content: center;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="group"][draggable="true"],
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="subgroup"][draggable="true"],
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="action"][draggable="true"] {
+  cursor: var(--cursor-pointer, pointer);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="group"][draggable="true"].tah-dragging,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="subgroup"][draggable="true"].tah-dragging,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="action"][draggable="true"].tah-dragging {
+  cursor: var(--cursor-grab-down, grabbing);
+  opacity: 0.2;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="action"][draggable="true"] .tah-action-button,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="subgroup"][draggable="true"] .tah-subgroup-button,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="subgroup"][draggable="true"] .tah-list-subgroup-title,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="group"][draggable="true"] .tah-group-button {
+  cursor: var(--cursor-pointer, pointer);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="action"][draggable="true"].tah-dragging .tah-action-button,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="subgroup"][draggable="true"].tah-dragging .tah-subgroup-button,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="subgroup"][draggable="true"].tah-dragging .tah-list-subgroup-title,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="group"][draggable="true"].tah-dragging .tah-group-button {
+  cursor: var(--cursor-grab-down, grabbing);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="action"].tah-drop-action-before,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="action"].tah-drop-action-after {
+  position: relative;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="action"].tah-drop-action-before::after,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="action"].tah-drop-action-after::after {
+  background: var(--color-warm-1, #ee9b3a);
+  border-radius: 2px;
+  content: "";
+  height: 80%;
+  pointer-events: none;
+  position: absolute;
+  top: 10%;
+  width: 3px;
+  z-index: 100;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="action"].tah-drop-action-before::after {
+  left: calc(var(--tah-gap, 5px) * -0.5 - 1.5px);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud [data-part="action"].tah-drop-action-after::after {
+  right: calc(var(--tah-gap, 5px) * -0.5 - 1.5px);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-add-group-button .tah-drop-icon,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-add-subgroup-button .tah-drop-icon {
+  display: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-drag-active .tah-add-group-button,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-drag-active .tah-add-subgroup-button {
+  opacity: 0.5;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-drag-active .tah-add-group-button .tah-add-icon,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-drag-active .tah-add-subgroup-button .tah-add-icon {
+  display: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-drag-active .tah-add-group-button.tah-drop-indicator,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-drag-active .tah-add-subgroup-button.tah-drop-indicator {
+  background: var(--color-warm-1, #ee9b3a);
+  border-color: var(--color-warm-1, #ee9b3a);
+  opacity: 1;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-drag-active .tah-add-group-button.tah-drop-indicator .tah-drop-icon,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-drag-active .tah-add-subgroup-button.tah-drop-indicator .tah-drop-icon {
+  color: var(--color-cool-5, #0b0a13);
+  display: inline-block;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-character-name {
+  color: var(--tah-character-name-color);
+  font-size: 15px;
+  position: absolute;
+  text-shadow: var(--tah-character-name-text-shadow);
+  top: -22px;
+  width: max-content;
+  z-index: 1;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud:hover #tah-collapse-expand > #tah-collapse-hud,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud:hover > #tah-buttons {
+  display: flex;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-unlocked ~ #tah-buttons {
+  display: flex;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-collapse-expand {
+  left: -20px;
+  position: absolute;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-collapse-expand #tah-collapse-hud {
+  align-items: center;
+  display: none;
+  height: var(--tah-button-height);
+  position: relative;
+  z-index: 1;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-collapse-expand #tah-expand-hud {
+  background: var(--tah-button-background);
+  justify-content: center;
+  min-width: auto;
+  padding: 0 5px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-collapse-expand button > i {
+  font-size: 15px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-buttons {
+  align-items: center;
+  display: none;
+  font-style: normal;
+  font-weight: normal;
+  height: var(--tah-button-height);
+  position: relative;
+  z-index: 1;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-buttons #tah-drag-hud {
+  cursor: move;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-buttons #tah-drag-hud:focus,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-buttons #tah-drag-hud:focus-visible,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-buttons #tah-drag-hud.focus {
+  border-color: transparent;
+  box-shadow: none;
+  outline: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-buttons:has(#tah-drag-hud:not(.tah-hidden)) {
+  display: flex;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box {
+  align-items: center;
+  background-color: var(--tah-button-background-color);
+  border: var(--tah-button-border);
+  border-radius: var(--tah-border-radius);
+  box-shadow: var(--tah-button-box-shadow);
+  color: var(--tah-button-text-color);
+  display: flex;
+  font-size: 13px;
+  font-weight: var(--tah-button-box-font-weight);
+  height: var(--tah-button-height);
+  margin: 0;
+  min-width: var(--tah-button-min-width);
+  outline-offset: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-shadow: var(--tah-button-text-shadow);
+  /* -------------------------------------------- */
+  /* Disabled Button                              */
+  /* -------------------------------------------- */
+  /* -------------------------------------------- */
+  /* Toggleable Button                            */
+  /* -------------------------------------------- */
+  /* -------------------------------------------- */
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box:focus,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box:focus-visible {
+  outline: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box.tah-group-button {
+  background: var(--tah-button-background);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box:not(.disabled):active,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box:not(.disabled):hover {
+  background-color: var(--tah-button-hover-background-color);
+  border: var(--tah-button-hover-border);
+  box-shadow: var(--tah-button-hover-box-shadow);
+  color: var(--tah-button-hover-text-primary-color);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box:not(.disabled):active .tah-info,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box:not(.disabled):hover .tah-info {
+  color: var(--tah-button-hover-text-secondary-color);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box:not(.disabled):active .tah-info.tah-spotlight,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box:not(.disabled):hover .tah-info.tah-spotlight {
+  color: var(--tah-button-hover-text-tertiary-color);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box.disabled {
+  color: var(--tah-text-disabled-color);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box.disabled:hover {
+  box-shadow: var(--tah-button-box-shadow);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box.toggle:not(.disabled):hover {
+  background: var(--tah-button-toggle-hover-background-color);
+  box-shadow: var(--tah-button-toggle-hover-box-shadow);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box.active {
+  background: var(--tah-button-active-background-color);
+  box-shadow: var(--tah-button-active-box-shadow);
+  color: var(--tah-button-active-text-color);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box.active.activeText > .tah-button-content:after {
+  content: "\f00c";
+  font-family: "Font Awesome 7 Pro", "Font Awesome 6 Pro";
+  font-weight: 900;
+  margin-left: 0.25rem;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box.shrink {
+  min-width: min-content;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box .tah-button-image {
+  background-color: var(--tah-button-image-background-color) !important;
+  border-radius: var(--tah-button-image-border-radius);
+  height: var(--tah-button-image-height);
+  min-width: var(--tah-button-image-width);
+  width: var(--tah-button-image-width);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box .tah-button-content {
+  display: flex;
+  gap: var(--tah-gap);
+  overflow: hidden;
+  padding: 0 10px;
+  width: 100%;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box .tah-button-content:empty {
+  display: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box .tah-button-text {
+  overflow: hidden;
+  padding: 1px 0;
+  padding-right: 1px;
+  text-align: left;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box .tah-icon > i {
+  font-size: x-small;
+  margin: 0px 2px 0px 0px;
+  text-shadow: var(--tah-button-text-shadow);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box .tah-info-container {
+  align-items: center;
+  display: flex;
+  gap: var(--tah-gap);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box .tah-info-container .tah-info {
+  color: var(--tah-text-secondary-color);
+  font-size: 10px;
+  white-space: nowrap;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box .tah-info-container .tah-info.tah-spotlight {
+  color: var(--tah-text-tertiary-color);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-icon {
+  background: transparent;
+  border: 0;
+  line-height: unset;
+  margin: 0;
+  padding: 0;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-icon:hover,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-icon:focus {
+  box-shadow: none;
+  outline: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-icon:hover > i,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-icon:focus > i {
+  color: var(--tah-icon-hover-color);
+  text-shadow: var(--tah-icon-hover-text-shadow);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-icon > i {
+  color: var(--tah-icon-color);
+  font-size: var(--font-size-12);
+  margin: 3px;
+  padding: 3px;
+  pointer-events: none;
+  position: relative;
+  text-align: center;
+  text-shadow: var(--tah-icon-text-shadow);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-unlocked .tah-collapse-icon,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-unlocked .tah-expand-icon {
+  display: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-unlocked [data-part="subgroup"] {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px dashed var(--tah-text-primary-color, #fff);
+  border-radius: var(--tah-border-radius);
+  padding: 1rem;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-unlocked .tah-add-subgroup-button {
+  background: rgba(0, 0, 0, 0.2);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-unlocked [data-part="subgroup"] .tah-add-action-button,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-unlocked [data-part="subgroup"] .tah-add-subgroup-button:not(.tah-drop-indicator) {
+  background: rgba(255, 255, 255, 0.1);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-unlocked .tah-button-box:not(.disabled):hover {
+  background-color: var(--tah-button-background-color);
+  border-color: transparent;
+  outline: 1px dashed var(--tah-text-primary-color, #fff);
+  box-shadow: var(--tah-button-box-shadow);
+  color: var(--tah-button-text-color);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-unlocked .tah-button-box:not(.disabled):hover .tah-info {
+  color: inherit;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-unlocked .tah-button-box:not(.disabled):hover .tah-info.tah-spotlight {
+  color: inherit;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups {
+  display: flex;
+  filter: none;
+  gap: var(--tah-gap);
+  /* -------------------------------------------- */
+  /* Actions                                      */
+  /* -------------------------------------------- */
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-add-group-button {
+  align-items: center;
+  align-self: center;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px dashed var(--tah-text-primary-color, #fff);
+  border-radius: 4px;
+  color: var(--tah-text-primary-color, #fff);
+  cursor: pointer;
+  display: inline-flex;
+  height: var(--tah-button-height);
+  justify-content: center;
+  margin: 0;
+  opacity: 0.7;
+  padding: 0;
+  width: 24px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-add-group-button:hover {
+  border-color: var(--tah-text-hover-primary-color, #fff);
+  color: var(--tah-text-hover-primary-color, #fff);
+  opacity: 1;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-add-action-button {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px dashed var(--tah-text-primary-color, #fff);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: var(--tah-text-primary-color, #fff);
+  cursor: pointer;
+  display: inline-flex;
+  height: var(--tah-button-height);
+  justify-content: center;
+  margin: 0;
+  min-width: 32px;
+  opacity: 0.6;
+  padding: 0 6px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-add-action-button:hover {
+  border-color: var(--tah-text-hover-primary-color, #fff);
+  color: var(--tah-text-hover-primary-color, #fff);
+  opacity: 1;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-add-subgroup-button {
+  align-items: center;
+  align-self: stretch;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px dashed var(--tah-text-primary-color, #fff);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: var(--tah-text-primary-color, #fff);
+  cursor: pointer;
+  display: flex;
+  flex: 1 1 auto;
+  height: 24px;
+  justify-content: center;
+  margin: 2px 0;
+  min-height: 24px;
+  min-width: 80px;
+  opacity: 0.6;
+  padding: 0;
+  width: 100%;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-add-subgroup-button:hover {
+  border-color: var(--tah-text-hover-primary-color, #fff);
+  color: var(--tah-text-hover-primary-color, #fff);
+  opacity: 1;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-group > .tah-subgroups-container > .tah-subgroups {
+  background: var(--tah-subgroups-background);
+  left: -12px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-subgroup > .tah-subgroups-container > .tah-subgroups {
+  left: -10px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-groups {
+  width: max-content;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-groups > .tah-tab-subgroup > .tah-subgroups > .tah-actions {
+  background: var(--tah-background-color);
+  border-radius: var(--tah-border-radius);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-group > .tah-subgroups-container > .tah-subgroups,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-subgroup > .tah-subgroups-container > .tah-subgroups {
+  background: var(--tah-subgroups-background);
+  border-radius: var(--tah-border-radius);
+  flex-direction: column;
+  position: relative;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-group > .tah-subgroups-container.expand-down,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-subgroup > .tah-subgroups-container.expand-down {
+  top: 100%;
+  padding-top: 3px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-group > .tah-subgroups-container.expand-down > .tah-subgroups,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-subgroup > .tah-subgroups-container.expand-down > .tah-subgroups {
+  padding: 12px 14px 14px 14px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-group > .tah-subgroups-container.expand-up,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-subgroup > .tah-subgroups-container.expand-up {
+  bottom: 100%;
+  flex-direction: column-reverse;
+  padding-bottom: 3px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-group > .tah-subgroups-container.expand-up > .tah-subgroups,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-subgroup > .tah-subgroups-container.expand-up > .tah-subgroups {
+  padding: 14px 14px 12px 14px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-group > .tah-subgroups-container.expand-up > .tah-subgroups > .tah-list-subgroups,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-subgroup > .tah-subgroups-container.expand-up > .tah-subgroups > .tah-list-subgroups {
+  flex-direction: column-reverse;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-group.hover > .tah-subgroups-container,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-subgroup.hover > .tah-subgroups-container {
+  display: flex;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-group.hover > .tah-subgroups-container > .tah-subgroups,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-subgroup.hover > .tah-subgroups-container > .tah-subgroups {
+  display: flex;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-subgroups-container {
+  display: none;
+  position: absolute;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-subgroups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tah-gap);
+  min-width: max-content;
+  width: 100%;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-subgroups.expand-down {
+  flex-direction: column;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroups {
+  background: var(--tah-background-color);
+  border-radius: var(--tah-border-radius);
+  flex-direction: column;
+  display: flex;
+  gap: var(--tah-gap);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroups .tah-list-image {
+  border: var(--tah-button-border);
+  border-radius: var(--tah-border-radius);
+  box-shadow: var(--tah-button-box-shadow);
+  height: var(--tah-button-height);
+  margin-right: 5px;
+  min-width: var(--tah-button-min-width);
+  width: var(--tah-button-min-width);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroups .tah-list-subgroups {
+  background: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroups .tah-list-subgroup[data-has-image="true"] {
+  flex-direction: row;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-subgroups {
+  display: flex;
+  gap: var(--tah-gap);
+  position: relative;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroup .tah-list-subgroup-title {
+  align-items: center;
+  color: var(--tah-text-primary-color);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 11px;
+  gap: var(--tah-gap);
+  letter-spacing: 0.22em;
+  line-height: 1;
+  text-shadow: var(--tah-text-shadow);
+  text-transform: uppercase;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroup .tah-list-subgroup-title:hover {
+  color: var(--tah-text-hover-primary-color);
+  cursor: pointer;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroup .tah-list-subgroup-title:hover > .tah-collapse-icon:not(.tah-hidden),
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroup .tah-list-subgroup-title:hover > .tah-expand-icon:not(.tah-hidden) {
+  visibility: visible;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroup .tah-list-subgroup-title:hover > i {
+  bottom: 1px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroup .tah-list-subgroup-title > i {
+  color: var(--tah-list-subgroup-title-icon-color);
+  font-size: 8px;
+  pointer-events: none;
+  position: relative;
+  visibility: hidden;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroup .tah-list-subgroup-title .tah-info {
+  background: var(--tah-button-background-color);
+  border-radius: 5px;
+  color: var(--tah-text-secondary-color);
+  font-size: x-small;
+  padding: 1px 3px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroup .tah-list-subgroup-title .tah-info:hover {
+  color: var(--tah-text-hover-secondary-color);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroup .tah-list-subgroup-title .tah-info.tah-spotlight {
+  color: var(--tah-text-tertiary-color);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-list-subgroup .tah-list-subgroup-title .tah-info.tah-spotlight:hover {
+  color: var(--tah-text-hover-secondary-color);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-tab-subgroup > .tah-tab-subgroup > .tah-subgroups > .tah-actions {
+  background: var(--tah-background-color);
+  border-radius: var(--tah-border-radius);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups.tah-unlocked .tah-subgroup > .tah-list-subgroup > .tah-subgroups > .tah-list-subgroups {
+  padding-left: 10px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-subgroup[data-show-title="false"] > div > .tah-list-subgroup-title > .tah-list-subgroup-title-text {
+  color: var(--tah-text-disabled-color);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups:not(.tah-unlocked) .tah-subgroup[data-show-title="false"] > .tah-list-subgroup > .tah-subgroups > .tah-list-subgroups > .tah-subgroup:not([data-show-title="false"]) {
+  padding-left: 0px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-subgroup:not([data-show-title="false"])[data-has-image="false"] > .tah-list-subgroup > .tah-subgroups > .tah-list-subgroups > .tah-subgroup:not([data-show-title="false"])[data-has-image="false"] {
+  padding-left: 10px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups > .tah-actions {
+  margin-top: 5px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-actions {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--tah-gap);
+  width: 100%;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-actions.tah-actions-grid {
+  align-items: stretch;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-actions.tah-actions-grid .tah-action,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-groups .tah-actions.tah-actions-grid .tah-action-button {
+  width: 100%;
+}
+#token-action-hud-app.tah-style-antarctique2026 #context-menu menu.context-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#token-action-hud-app.tah-style-antarctique2026 #context-menu li.context-item.tah-context-delete {
+  color: var(--color-warm-2, #c9593f);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-character-name {
+  font-family: "TAH20 Rajdhani", "Rajdhani", "Arial Narrow", sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  top: -26px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-character-name::before,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-character-name::after {
+  content: "";
+  color: #c9d7e2;
+  font-size: 9px;
+  margin: 0 7px;
+  vertical-align: middle;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-group-button {
+  font-family: "TAH20 Rajdhani", "Rajdhani", "Arial Narrow", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  border-color: #c9d7e2;
+  color: #ff6a13;
+  padding: 0 4px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-group-button .tah-button-text {
+  text-align: center;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-group-button::before,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-group-button::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 215, 226, 0.7), transparent);
+  pointer-events: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-group-button::before {
+  top: 3px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-group-button::after {
+  bottom: 3px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-group.hover > .tah-group-button {
+  background: linear-gradient(180deg, #e2540a 0%, #ff6a13 100%);
+  border-color: #ff6a13;
+  color: #ffffff;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-action-button {
+  font-family: "TAH20 Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-action-button .tah-button-text {
+  padding-top: 2px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-action-button .tah-info-container .tah-info {
+  font-family: "TAH20 Rajdhani", "Rajdhani", "Arial Narrow", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: #e9f0f5;
+  background: linear-gradient(180deg, #ff6a13, #c9d7e2);
+  padding: 1px 6px;
+  line-height: 1.35;
+  border: 1px solid #d6e1ea;
+  text-shadow: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-action-button .tah-info-container .tah-info.tah-spotlight {
+  background: linear-gradient(180deg, #e2540a, #ff6a13);
+  color: #ffffff;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-action-button:not(.disabled):hover .tah-info-container .tah-info {
+  color: #e9f0f5;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-image {
+  filter: sepia(0.35) contrast(1.05);
+  border-right: 1px solid #d6e1ea;
+  transition: filter 0.2s;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box:hover .tah-button-image {
+  filter: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-group > .tah-subgroups-container > .tah-subgroups,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-subgroup > .tah-subgroups-container > .tah-subgroups {
+  border: 2px solid #c9d7e2;
+  outline: 1px solid #d6e1ea;
+  outline-offset: 3px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.75);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-group > .tah-subgroups-container > .tah-subgroups::before,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-subgroup > .tah-subgroups-container > .tah-subgroups::before,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-group > .tah-subgroups-container > .tah-subgroups::after,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-subgroup > .tah-subgroups-container > .tah-subgroups::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ff6a13;
+  pointer-events: none;
+  z-index: 2;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-group > .tah-subgroups-container > .tah-subgroups::before,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-subgroup > .tah-subgroups-container > .tah-subgroups::before {
+  top: -7px;
+  left: -7px;
+  border-right: none;
+  border-bottom: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-group > .tah-subgroups-container > .tah-subgroups::after,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-subgroup > .tah-subgroups-container > .tah-subgroups::after {
+  bottom: -7px;
+  right: -7px;
+  border-left: none;
+  border-top: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-list-subgroup .tah-list-subgroup-title {
+  font-family: "TAH20 Inter", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  color: #c9d7e2;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-list-subgroup .tah-list-subgroup-title::after {
+  content: "";
+  flex: 1 1 20px;
+  min-width: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(201, 215, 226, 0.8), transparent);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-list-subgroup .tah-list-subgroup-title:hover {
+  color: #ff6a13;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-list-subgroup .tah-list-subgroup-title .tah-info {
+  font-family: "TAH20 Inter", "Helvetica Neue", Arial, sans-serif;
+  background: #e9f0f5;
+  border: 1px solid #d6e1ea;
+  border-radius: 0;
+  color: #ff6a13;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-icon > i {
+  color: #c9d7e2;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-collapse-expand #tah-expand-hud {
+  border-color: #c9d7e2;
+  color: #ff6a13;
+}
+/* --------------------------------------------------------------------------
+   Infobulles du HUD (affichées hors du HUD, d'où la classe sur <body>)
+   -------------------------------------------------------------------------- */
+body.tah-antarctique2026-active #tooltip.tah-tooltip,
+body.tah-antarctique2026-active .locked-tooltip.tah-tooltip {
+  background: linear-gradient(180deg, #f7fafc, #e9f0f5);
+  border: 1px solid #c9d7e2;
+  outline: 1px solid #d6e1ea;
+  outline-offset: 2px;
+  border-radius: 0;
+  color: #13202c;
+  font-family: "TAH20 Inter", "Helvetica Neue", Arial, sans-serif;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+body.tah-antarctique2026-active #tooltip.tah-tooltip h1,
+body.tah-antarctique2026-active .locked-tooltip.tah-tooltip h1,
+body.tah-antarctique2026-active #tooltip.tah-tooltip h2,
+body.tah-antarctique2026-active .locked-tooltip.tah-tooltip h2,
+body.tah-antarctique2026-active #tooltip.tah-tooltip h3,
+body.tah-antarctique2026-active .locked-tooltip.tah-tooltip h3,
+body.tah-antarctique2026-active #tooltip.tah-tooltip h4,
+body.tah-antarctique2026-active .locked-tooltip.tah-tooltip h4 {
+  font-family: "TAH20 Rajdhani", "Rajdhani", "Arial Narrow", sans-serif;
+  color: #ff6a13;
+  border-bottom: 1px solid #d6e1ea;
+}
+#token-action-hud-app.tah-style-antarctique2026 {
+  --tah-border-radius: 6px;
+  --tah-button-background: linear-gradient(180deg, #ffffff, #eef3f7);
+  --tah-subgroups-background: linear-gradient(rgba(120, 160, 190, 0.08) 1px, transparent 1px) 0 0 / 14px 14px,
+    linear-gradient(90deg, rgba(120, 160, 190, 0.08) 1px, transparent 1px) 0 0 / 14px 14px,
+    linear-gradient(180deg, #f7fafc, #e9f0f5);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box {
+  background-color: #ffffff;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-group-button {
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #13202c;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-group-button::before,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-group-button::after {
+  display: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-group.hover > .tah-group-button {
+  background: #ff6a13;
+  border-color: #e2540a;
+  color: #ffffff;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-action-button {
+  font-weight: 400;
+  font-size: 13px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-action-button .tah-info-container .tah-info {
+  font-family: "TAH20 Rajdhani", "Rajdhani", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  background: #13202c;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0 6px;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box.active,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box.active .tah-button-text {
+  color: #ffffff;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-box.active {
+  background: #1f7fbf;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-button-image {
+  filter: none;
+  border-right-color: #c9d7e2;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-group > .tah-subgroups-container > .tah-subgroups {
+  border: 1px solid #c9d7e2;
+  outline: none;
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(20, 50, 80, 0.3);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-group > .tah-subgroups-container > .tah-subgroups::before,
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-tab-group > .tah-subgroups-container > .tah-subgroups::after {
+  display: none;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-list-subgroup .tah-list-subgroup-title {
+  font-family: "TAH20 Rajdhani", "Rajdhani", "Arial Narrow", sans-serif;
+  font-weight: 700;
+  color: #5b6f80;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud .tah-list-subgroup .tah-list-subgroup-title::after {
+  background: linear-gradient(90deg, #ff6a13 0 16px, #c9d7e2 16px);
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-character-name {
+  font-family: "TAH20 Rajdhani", "Rajdhani", "Arial Narrow", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  text-shadow: 0 0 4px #000, 0 1px 2px #000;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-character-name::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff6a13;
+  box-shadow: 0 0 6px rgba(255, 106, 19, 0.9);
+  margin: 0 7px 0 0;
+}
+#token-action-hud-app.tah-style-antarctique2026 #token-action-hud #tah-character-name::after {
+  display: none;
+}

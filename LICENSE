@@ -1,0 +1,14 @@
+Token Action HUD – Thèmes L'Appel de Cthulhu
+Copyright (c) 2026 magisterphamtom
+
+Ce module est distribué sous licence Creative Commons Attribution 4.0
+International (CC BY 4.0) : https://creativecommons.org/licenses/by/4.0/
+
+Il reprend la feuille de structure de Token Action HUD Core
+(less/vendor/tah-hud.less, intégrée dans styles/tah-*.css),
+œuvre de Larkinabout, https://github.com/Larkinabout/fvtt-token-action-hud-core,
+elle-même sous licence CC BY 4.0.
+
+Polices incluses (voir fonts/LICENSE-*.txt) :
+- Limelight, Poiret One, IM Fell English, Inter et Rajdhani : SIL Open Font License 1.1
+- Special Elite : Apache License 2.0

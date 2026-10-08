@@ -1,0 +1,101 @@
+/* Token Action HUD — Thème « Antarctique 2026 » (tablette de station polaire) — magisterphamtom */
+@import "_base-vars.less";
+@text-shadow: none;
+
+@theme-class: tah-style-antarctique2026;
+@theme-body: tah-antarctique2026-active;
+@ornament: "";
+
+@bg: #e9f0f5;
+@bg2: #f7fafc;
+@gold: #c9d7e2;
+@gold-light: #ff6a13;
+@gold-dark: #d6e1ea;
+@ink: #13202c;
+@ink-dim: #5b6f80;
+@ink-disabled: #a3b1bd;
+@ink-strong: #0b1520;
+@blood: #ff6a13;
+@blood-dark: #e2540a;
+@blood-light: #e2540a;
+@on-blood: #ffffff;
+@hover-bg: #eef4f8;
+@image-bg: #dfe8ef;
+
+@font-title: "TAH20 Rajdhani", "Rajdhani", "Arial Narrow", sans-serif;
+@font-label: "TAH20 Inter", "Helvetica Neue", Arial, sans-serif;
+@font-body: "TAH20 Inter", "Helvetica Neue", Arial, sans-serif;
+
+@import "_theme.less";
+
+#token-action-hud-app.@{theme-class} {
+  --tah-border-radius: 6px;
+  --tah-button-background: linear-gradient(180deg, #ffffff, #eef3f7);
+  --tah-subgroups-background:
+    linear-gradient(rgba(120, 160, 190, 0.08) 1px, transparent 1px) 0 0 / 14px 14px,
+    linear-gradient(90deg, rgba(120, 160, 190, 0.08) 1px, transparent 1px) 0 0 / 14px 14px,
+    linear-gradient(180deg, #f7fafc, #e9f0f5);
+}
+#token-action-hud-app.@{theme-class} #token-action-hud {
+  .tah-button-box { background-color: #ffffff; }
+  .tah-group-button {
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: @ink;
+    &::before, &::after { display: none; }
+  }
+  .tah-tab-group.hover > .tah-group-button {
+    background: #ff6a13;
+    border-color: #e2540a;
+    color: #ffffff;
+  }
+  .tah-action-button { font-weight: 400; font-size: 13px; }
+  .tah-action-button .tah-info-container .tah-info {
+    font-family: "TAH20 Rajdhani", "Rajdhani", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    background: #13202c;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 0 6px;
+  }
+  .tah-button-box.active,
+  .tah-button-box.active .tah-button-text { color: #ffffff; }
+  .tah-button-box.active { background: #1f7fbf; }
+  .tah-button-image { filter: none; border-right-color: @gold; }
+  .tah-tab-group > .tah-subgroups-container > .tah-subgroups {
+    border: 1px solid @gold;
+    outline: none;
+    border-radius: 8px;
+    box-shadow: 0 10px 28px rgba(20, 50, 80, 0.30);
+    &::before, &::after { display: none; }
+  }
+  .tah-list-subgroup .tah-list-subgroup-title {
+    font-family: @font-title;
+    font-weight: 700;
+    color: @ink-dim;
+    &::after { background: linear-gradient(90deg, #ff6a13 0 16px, @gold 16px); }
+  }
+  #tah-character-name {
+    font-family: @font-title;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    text-shadow: 0 0 4px #000, 0 1px 2px #000;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff6a13;
+      box-shadow: 0 0 6px rgba(255, 106, 19, 0.9);
+      margin: 0 7px 0 0;
+    }
+    &::after { display: none; }
+  }
+}

@@ -1,0 +1,67 @@
+/* Token Action HUD — Thème « New York années 20 » (Manhattan, Chrysler, Broadway) — magisterphamtom */
+@import "_base-vars.less";
+@text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+
+@theme-class: tah-style-newyork20;
+@theme-body: tah-newyork20-active;
+@ornament: "▲";
+
+@bg: #0b1220;
+@bg2: #172338;
+@gold: #c8d2df;          // chrome
+@gold-light: #f6c560;    // ambre de Broadway
+@gold-dark: #5d6b80;
+@ink: #e9edf3;
+@ink-dim: #9aa8bb;
+@ink-disabled: #56637a;
+@ink-strong: #ffffff;
+@blood: #b4233f;         // néon rouge
+@blood-dark: #7a1530;
+@blood-light: #ff4d6d;
+@on-blood: #ffffff;
+@hover-bg: #1d2a42;
+@image-bg: #070c16;
+
+@font-title: "TAH20 Poiret One", "Poiret One", "Futura", sans-serif;
+@font-label: "TAH20 Poiret One", "Poiret One", "Futura", sans-serif;
+@font-body: "TAH20 Poiret One", "Poiret One", "Futura", sans-serif;
+
+@import "_theme.less";
+
+// Touches propres à New York
+#token-action-hud-app.@{theme-class} #token-action-hud {
+  .tah-group-button {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    font-size: 12px;
+    color: @gold;
+  }
+  .tah-tab-group.hover > .tah-group-button {
+    color: @on-blood;
+  }
+  .tah-action-button .tah-info-container .tah-info {
+    background: linear-gradient(180deg, #e3e8ef, #9aa8bb);
+    color: @bg;
+    font-family: "TAH20 Limelight", "Limelight", Georgia, serif;
+  }
+  #tah-character-name {
+    font-family: "TAH20 Poiret One", "Poiret One", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: @ink;
+  }
+  .tah-groups .tah-tab-group > .tah-subgroups-container.expand-down > .tah-subgroups,
+  .tah-groups .tah-tab-group > .tah-subgroups-container > .tah-subgroups {
+    padding-bottom: 30px;
+  }
+}
+
+// La feuille de structure lit le fond des panneaux dans cette variable
+#token-action-hud-app.@{theme-class} {
+  --tah-subgroups-background:
+    url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20300%2040%22%20preserveAspectRatio%3D%22none%22%3E%3Cg%20fill%3D%22%23c8d2df%22%20fill-opacity%3D%220.24%22%3E%3Crect%20x%3D%220%22%20y%3D%2226%22%20width%3D%2218%22%20height%3D%2214%22/%3E%3Crect%20x%3D%2216%22%20y%3D%2218%22%20width%3D%2214%22%20height%3D%2222%22/%3E%3Crect%20x%3D%2242%22%20y%3D%2212%22%20width%3D%2216%22%20height%3D%2228%22/%3E%3Crect%20x%3D%2258%22%20y%3D%2222%22%20width%3D%2220%22%20height%3D%2218%22/%3E%3Crect%20x%3D%2278%22%20y%3D%2215%22%20width%3D%2212%22%20height%3D%2225%22/%3E%3Crect%20x%3D%22106%22%20y%3D%2219%22%20width%3D%2214%22%20height%3D%2221%22/%3E%3Crect%20x%3D%22132%22%20y%3D%2214%22%20width%3D%2216%22%20height%3D%2226%22/%3E%3Cpolygon%20points%3D%22148%2C40%20148%2C12%20151%2C10%20151%2C6%20153%2C4%20153%2C1%20154%2C0%20155%2C1%20155%2C4%20157%2C6%20157%2C10%20160%2C12%20160%2C40%22/%3E%3Crect%20x%3D%22160%22%20y%3D%2220%22%20width%3D%2216%22%20height%3D%2220%22/%3E%3Crect%20x%3D%22176%22%20y%3D%2210%22%20width%3D%2214%22%20height%3D%2230%22/%3E%3Crect%20x%3D%22208%22%20y%3D%2217%22%20width%3D%2212%22%20height%3D%2223%22/%3E%3Crect%20x%3D%22236%22%20y%3D%2213%22%20width%3D%2214%22%20height%3D%2227%22/%3E%3Crect%20x%3D%22250%22%20y%3D%2221%22%20width%3D%2218%22%20height%3D%2219%22/%3E%3Crect%20x%3D%22282%22%20y%3D%2220%22%20width%3D%2218%22%20height%3D%2220%22/%3E%3C/g%3E%3C/svg%3E") bottom center / 100% 26px no-repeat,
+    radial-gradient(ellipse at top, rgba(200, 210, 223, 0.12), transparent 65%),
+    linear-gradient(180deg, #172338, #0b1220);
+}

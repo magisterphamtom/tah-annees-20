@@ -1,0 +1,93 @@
+/* Token Action HUD — Thème « New York 2026 » (verre fumé, LED, métro) — magisterphamtom */
+@import "_base-vars.less";
+@text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+
+@theme-class: tah-style-ny2026;
+@theme-body: tah-ny2026-active;
+@ornament: "";
+
+@bg: #121418;
+@bg2: #22262e;
+@gold: #3a3f48;
+@gold-light: #fccc0a;
+@gold-dark: #2c3038;
+@ink: #f2f3f5;
+@ink-dim: #9aa0aa;
+@ink-disabled: #5a606a;
+@ink-strong: #ffffff;
+@blood: #0039a6;
+@blood-dark: #002a7a;
+@blood-light: #ee352e;
+@on-blood: #ffffff;
+@hover-bg: #262a32;
+@image-bg: #0c0d10;
+
+@font-title: "TAH20 Inter", "Helvetica Neue", Arial, sans-serif;
+@font-label: "TAH20 Inter", "Helvetica Neue", Arial, sans-serif;
+@font-body: "TAH20 Inter", "Helvetica Neue", Arial, sans-serif;
+
+@import "_theme.less";
+
+#token-action-hud-app.@{theme-class} {
+  --tah-border-radius: 8px;
+  --tah-subgroups-background: linear-gradient(160deg, rgba(34, 38, 46, 0.97), rgba(14, 16, 20, 0.98));
+}
+#token-action-hud-app.@{theme-class} #token-action-hud {
+  .tah-group-button {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.01em;
+    color: @ink;
+    border-color: @gold;
+    &::before, &::after { display: none; }
+  }
+  .tah-tab-group.hover > .tah-group-button {
+    background: #0039a6;
+    border-color: #2f6fe0;
+    color: #ffffff;
+  }
+  .tah-action-button { font-weight: 400; font-size: 13px; }
+  .tah-action-button .tah-info-container .tah-info {
+    font-family: "TAH20 Rajdhani", "Rajdhani", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    background: #fccc0a;
+    color: #111317;
+    border: none;
+    border-radius: 9px;
+    padding: 0 7px;
+  }
+  .tah-button-box.active { background: #0039a6; }
+  .tah-button-image { filter: none; border-right-color: @gold; }
+  .tah-tab-group > .tah-subgroups-container > .tah-subgroups {
+    border: 1px solid @gold;
+    outline: none;
+    border-radius: 10px;
+    &::before, &::after { display: none; }
+  }
+  .tah-list-subgroup .tah-list-subgroup-title {
+    font-weight: 600;
+    color: @ink-dim;
+    &::after { background: linear-gradient(90deg, #fccc0a 0 20px, @gold 20px); }
+  }
+  #tah-character-name {
+    font-family: @font-title;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    color: #ffffff;
+    &::before {
+      content: "N";
+      display: inline-grid;
+      place-items: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #fccc0a;
+      color: #111317;
+      font-size: 10px;
+      margin: 0 7px 0 0;
+    }
+    &::after { display: none; }
+  }
+}

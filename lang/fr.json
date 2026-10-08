@@ -1,0 +1,20 @@
+{
+  "TAH20": {
+    "StyleName": "Années 20 (Art Déco)",
+    "NeedCore": "Les thèmes années 20 ont besoin du module Token Action HUD Core.",
+    "Styles": {
+      "annees20": "Années 20 (Art Déco)",
+      "newyork20": "New York années 20",
+      "montagnes": "Par-delà les Montagnes Hallucinées",
+      "ny2026": "New York 2026",
+      "antarctique2026": "Antarctique 2026"
+    },
+    "Settings": {
+      "ForceStyle": {
+        "Name": "Thème imposé à toute la table",
+        "Hint": "Réservé au Gardien. Le style choisi ici est appliqué à chaque joueur, dès maintenant pour les joueurs connectés et à chaque connexion.",
+        "Free": "Laisser chacun choisir"
+      }
+    }
+  }
+}
