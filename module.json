@@ -60,5 +60,11 @@
   "download": "https://github.com/magisterphamtom/tah-annees-20/releases/download/v1.2.0/module.zip",
   "bugs": "https://github.com/magisterphamtom/tah-annees-20/issues",
   "readme": "https://github.com/magisterphamtom/tah-annees-20/blob/main/README.md",
-  "license": "CC-BY-4.0"
+  "license": "CC-BY-4.0",
+  "media": [
+    {
+      "type": "cover",
+      "url": "https://raw.githubusercontent.com/magisterphamtom/tah-annees-20/main/.github/banner.png"
+    }
+  ]
 }
