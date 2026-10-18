@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/banner.png" alt="tah-annees-20" width="100%"></p>
+
 # Token Action HUD – Thèmes L'Appel de Cthulhu
 
 Cinq styles pour [Token Action HUD](https://foundryvtt.com/packages/token-action-hud-core), dans l'esprit des années 1920 et de *L'Appel de Cthulhu* :
